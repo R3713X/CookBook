@@ -34,7 +34,7 @@ move_uploaded_file($file_tmp,"uploads/".$file_name);//εδω κανει upload �
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="3652_3782";
+$dbname="cookbook";
 //from post
 $name = $_POST['name'];
 $instr = $_POST['instr'];

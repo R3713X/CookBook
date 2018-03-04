@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "3652_3782";
+$dbname = "cookbook";
 //------------------------------------------
 //δημιουργια database
 $conn = new mysqli($servername,$username,$password);
@@ -11,17 +11,17 @@ if ($conn->connect_error){
 	die("con fail: ". $conn->connect_error);
 }
 
-$sql = "CREATE DATABASE 3652_3782";
+$sql = "CREATE DATABASE cookbook";
 if ($conn->query($sql) === TRUE){
-	echo "H βάση δημιουργήθηκε. ";
+	echo "The database has been created. ";
 }else {
-	echo "Σφαλμα ή η βαση υπαρχει. ";
+	echo "Error";
 }
 $conn->close();
 //----------------------------------------
-//δημιουργια table recipes
+//Creation of table recipes
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+// Connection check
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -47,15 +47,10 @@ username TEXT NOT NULL,
 passw TEXT NOT NULL
 )";
 
-if ($conn->query($sqlt) === TRUE) {
-    echo "Ο πίνακας recipes δημιουργήθηκε. ";
+if ($conn->query($sqlt) === TRUE && $conn->query($sqlt2) === TRUE) {
+    echo " The tables have been created.";
 } else {
-    echo "Σφαλμα" . $conn->error;
-}
-if ($conn->query($sqlt2) === TRUE) {
-    echo " Ο πίνακας users δημιουργήθηκε.";
-} else {
-    echo "Σφαλμα" . $conn->error;
+    echo "Error" . $conn->error;
 }
 
 

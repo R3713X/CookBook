@@ -10,22 +10,22 @@
 	<?php include 'menu.php';?>
 	<div class="content">
 	<form action="regdb.php" method="post">
-		<label for="firstn">Όνομα:</label>
+		<label for="firstn">Name:</label>
 		<input type="text" name="firstn" required><br>
 
-		<label for="lastn">Επώνυμο:</label>
+		<label for="lastn">Surname:</label>
 		<input type="text" name="lastn" required><br>
 
 		<label for="email">E-mail:</label>
 		<input type="text" name="email" required><br>
 
-		<label for=username>Όνομα Χρήστη:</label> 
+		<label for=username>Username:</label>
 		<input type="text" name="username" required><br>
 
-		<label for="passw">Κωδικός:</label>
+		<label for="passw">Password:</label>
 		<input type="password" name="passw" required><br><br>
 
-		<span style="margin-left: 360px;"><input type="submit" value="Εγγραφή"></span>
+		<span style="margin-left: 360px;"><input type="submit" value="Sign Up"></span>
 	</form>
 	</div>
 

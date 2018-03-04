@@ -5,7 +5,7 @@ session_start();
 ?>
 <html>
 <head>
-<title>Είσοδος Χρήστη</title>
+<title>Login:</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/tabicon.ico">
 <meta  http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,19 +13,19 @@ session_start();
 <body>
 <div class="main" style="height: 100px;">
 	<?php include 'menu.php';?>
-	<span style="margin-left: 46%;"><h3>Είσοδος Χρήστη</h3></span><br><br>		
+	<span style="margin-left: 46%;"><h3>Log in:</h3></span><br><br>
 	<div class="content">
 
 	<form action="loginview.php" method="post">
 		<h4>
-		<label for=username>Όνομα Χρήστη:</label> 
+		<label for=username>Username:</label>
 		<input type="text" name="username"><br>
 
-		<label for="passw">Κωδικός:</label>
+		<label for="passw">Password:</label>
 		<input type="password" name="passw"><br>
 
 		<label></label>
-		<center><input type="submit" value="Είσοδος"></center>
+		<center><input type="submit" value="Log in"></center>
 
 		
 		</h4>
@@ -41,7 +41,7 @@ session_start();
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="3652_3782";
+$dbname="cookbook";
 
 include 'dbcon.php';//connect to Db
 
@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
 }else{
 	?>
 	<center><h3>
-			<?php echo "Λάθος στοιχεία!";?>
+			<?php echo "Wrong username/password!";?>
 		</h3></center>
 	<?php
 	

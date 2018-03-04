@@ -1,17 +1,17 @@
 <div class="nav">	
 	<ul>
- 		<li><a href="index.php">ΑΡΧΙΚΗ</a></li>
- 		<li><a href="categories.php">ΚΑΤΗΓΟΡΙΕΣ</a></li>
-  		<li><a href="addrecipe.php">ΠΡΟΣΘΗΚΗ</a></li>
-  		<li><a href="searchview.php">ΑΝΑΖΗΤΗΣΗ</a></li>
+ 		<li><a href="index.php">HOME</a></li>
+ 		<li><a href="categories.php">CATEGORIES</a></li>
+  		<li><a href="addrecipe.php">ADD RECIPE</a></li>
+  		<li><a href="searchview.php">SEARCH</a></li>
 
   	</ul>	
 </div>
 <div style="float:right;margin-right:20px;">
 	<?php 
 	if (isset($_SESSION['firstn'])){
-	?>Καλωσήρθατε, <?php echo $_SESSION['firstn'] ." ". $_SESSION['lastn']; 
-	}else{?>Δεν είστε συνδεδεμένος.<?php
+	?>Welcome, <?php echo $_SESSION['firstn'] ." ". $_SESSION['lastn'];
+	}else{?>You are not logged in.<?php
 	}
 	?>
 </div>
@@ -20,10 +20,10 @@
 <h4>
 <?php
 	if (isset($_SESSION['login'])){
-		echo "<a href=\"myrecipes.php\"><h3><u>Οι συνταγές μου</u></h3></a><br><br>";
-		echo "<a href=\"logout.php\">Αποσύνδεση</a>";
+		echo "<a href=\"myrecipes.php\"><h3><u>My recipes</u></h3></a><br><br>";
+		echo "<a href=\"logout.php\">Log out</a>";
 	}else{
-		echo "<a href=\"loginview.php\">Σύνδεση</a>";
+		echo "<a href=\"loginview.php\">Log in</a>";
 	}
 ?>
 <br>
@@ -31,7 +31,7 @@
 <?php
 	if (!isset($_SESSION['login'])){?>
 	<hr>
-	<span class="linkStyle" style="text-align: center;"><a href="register.php">Εγγραφή</a></span>	
+	<span class="linkStyle" style="text-align: center;"><a href="register.php">Sign up</a></span>
 <?php 
 }?>
 </h4>

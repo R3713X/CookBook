@@ -1,21 +1,21 @@
-Την δημιουργία της βάσης επιλέξαμε να την κάνουμε με αρχεία .php και οχι .sql
 
-Για την δημιουργία της βάσης το link είναι:
 
-http://localhost/3652_3782/create_db/create_dbt.php
+Creation of database link
 
-----------------------------------------------
-
-Για την εισαγωγή δεδομένων:
-
-http://localhost/3652_3782/create_db/insertdb.php
+http://localhost/Cookbook/create_db/create_dbt.php
 
 ----------------------------------------------
-Για την είσοδο:
-ονομα χρηστη: admin
-κωδικος: admin
+
+Insertion for the database:
+
+http://localhost/CookBook/create_db/insertdb.php
+
+----------------------------------------------
+Login
+username: admin
+password: admin
 	ή
-ονομα χρηστη: admin2
-κωδικος: admin2
+username: admin2
+password: admin2
 
 

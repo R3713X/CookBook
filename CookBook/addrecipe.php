@@ -8,7 +8,7 @@ if ($_SESSION['login']!="TRUE"){
 <html>
 
 <head>
-<title>Προσθήκη Συνταγής</title>
+<title>Add a recipe</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/tabicon.ico">
 	<meta  http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -38,25 +38,25 @@ if ($_SESSION['login']!="TRUE"){
 	<?php include 'menu.php';?>
 	<form action="addDB.php" method="post" enctype="multipart/form-data">
 	<div class="content  ">
-		<br><h3><center>ΠΡΟΣΘΗΚΗ ΣΥΝΤΑΓΗΣ</center></h3><br><hr><br>
-		<h4>Τίτλος Συνταγής: <input type="text" name="name" required></h4><br><br>
-		<h4>Κατηγορία:
+		<br><h3><center>ADD A RECIPE</center></h3><br><hr><br>
+		<h4>Recipe title: <input type="text" name="name" required></h4><br><br>
+		<h4>Category:
 		<select name="category" required>
-  			<option value="">Επιλέξτε...</option>
-  			<option value="Κυρίως πιάτο">Κυρίως πιάτο</option>
-  			<option value="Ορεκτικό">Ορεκτικό</option>
-  			<option value="Σαλάτα">Σαλάτα</option>
-  			<option value="Γλυκό">Γλυκό</option>
+  			<option value="">Choose...</option>
+  			<option value="Main Dish">Main dish</option>
+  			<option value="Appetizer">Appetizer</option>
+  			<option value="Salad">Salad</option>
+  			<option value="Preserve">Preserve</option>
 		</select>
-		</p>Χρόνος εκτέλεσης: <input type="tel" name="time" style="width: 30px;" pattern="[0-9]{1,3}"  maxlength="3" required> λεπτά.<br></h4>		
+		</p>Preparation time: <input type="tel" name="time" style="width: 30px;" pattern="[0-9]{1,3}"  maxlength="3" required> minutes.<br></h4>
 		<div class="  con1"><br>
-			Οδηγίες:
+			Instructions:
 		​	<textarea id="steps" rows="20" cols="50" name="instr" fixed required></textarea><br>
 			<input type="file" name="image">
-			<input type="submit" value="Αποθήκευση">	
+			<input type="submit" value="Save">
 		</div>
 		<div class=" con2">
-			Υλικά:
+			Ingrediences:
 			<input type="button" id="add_ingr()" onclick="addIngr()" value=" + "> 
 			<br>
 			<div id=ingrs>

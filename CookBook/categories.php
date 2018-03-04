@@ -7,7 +7,7 @@ if ($_SESSION['login']!="TRUE"){
 ?>
 <html>
 <head>
-<title>Κατηγορίες</title>
+<title>Categories</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/tabicon.ico">
 <meta  http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -17,31 +17,31 @@ if ($_SESSION['login']!="TRUE"){
 	<?php include 'menu.php';?>	
 	<br>	
 	<div class="con1" style="margin-left: 12%;">
-		<center><h5>ΚΥΡΙΩΣ ΠΙΑΤΑ</h5></center><hr>
+		<center><h5>MAIN DISHES</h5></center><hr>
 		<?php
 		include 'dbcon.php';//connect to Db
-		$sql = "SELECT * FROM recipes WHERE category = 'Κυρίως πιάτο' AND del_rec = 0 ORDER BY name";
+		$sql = "SELECT * FROM recipes WHERE category = 'Main dish' AND del_rec = 0 ORDER BY name";
 		include 'sortcat.php';?>	
 	</div>
 	<div class="con1">
-		<center><h5>ΟΡΕΚΤΙΚΑ</h5></center><hr>
+		<center><h5>SNACKS & APPETIZERS</h5></center><hr>
 		<?php
 		include 'dbcon.php';
-		$sql = "SELECT * FROM recipes WHERE category = 'Ορεκτικό' AND del_rec = 0 ORDER BY name";
+		$sql = "SELECT * FROM recipes WHERE category = 'Appetizer' AND del_rec = 0 ORDER BY name";
 		include 'sortcat.php';?>
 	</div>
 	<div class="con1">
-		<center><h5>ΣΑΛΑΤΕΣ</h5></center><hr>
+		<center><h5>SALADS</h5></center><hr>
 		<?php
 		include 'dbcon.php';
-		$sql = "SELECT * FROM recipes WHERE category = 'Σαλάτα' AND del_rec = 0 ORDER BY name";
+		$sql = "SELECT * FROM recipes WHERE category = 'Salad' AND del_rec = 0 ORDER BY name";
 		include 'sortcat.php';?>
 	</div>
 	<div class="con1">
-		<center><h5>ΓΛΥΚΑ</h5></center><hr>
+		<center><h5>PRESERVES</h5></center><hr>
 		<?php
 		include 'dbcon.php';
-		$sql = "SELECT * FROM recipes WHERE category = 'Γλυκό' AND del_rec = 0 ORDER BY name";
+		$sql = "SELECT * FROM recipes WHERE category = 'Preserve' AND del_rec = 0 ORDER BY name";
 		include 'sortcat.php';?>
 	</div>
 </div>

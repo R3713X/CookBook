@@ -6,7 +6,7 @@ if ($_SESSION['login']!="TRUE"){
 ?>
 <html>
 <head>
-<title>Αρχική</title>
+<title>Home</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/tabicon.ico">
 <meta  http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -17,13 +17,13 @@ if ($_SESSION['login']!="TRUE"){
 <div class="content">
 <form action="index.php" method="post" enctype="multipart/form-data">
 <br>
-<h4><center>Ταξινόμηση ανά: <select name="sort" value="0">
-  <option value="0">Επιλέξτε...</option>
-  <option value="1">Χρόνος εκτέλεσης &uarr; </option>
-  <option value="2">Χρόνος εκτέλεσης &darr;</option>
-  <option value="3">Κατηγορία &uarr;</option>
-  <option value="4">Κατηγορία &darr;</option>
-</select> <input type="submit"  value="Βρες"></center></h4>
+<h4><center>Order by: <select name="sort" value="0">
+  <option value="0">Choose...</option>
+  <option value="1">Preparation time &uarr; </option>
+  <option value="2">Preparation time &darr;</option>
+  <option value="3">Category &uarr;</option>
+  <option value="4">Category &darr;</option>
+</select> <input type="submit"  value="OK"></center></h4>
 </form>
 <?php
 if (isset($_POST['sort']))	{
@@ -31,8 +31,8 @@ if (isset($_POST['sort']))	{
 }else{
 	$sort=0;
 }
-//Allazoume to query order by αναλογα τι θέλει να βρει ο χρήστης
-//το del_rec ειναι για να μην εμφανιζονται διαγραμένες συνταγές
+//Changing the query order by the users choice
+//del_rec is to mark the deleted recipes
 if($sort==0){
 $sql = "SELECT * FROM recipes WHERE del_rec = 0";}
 else if($sort==1){
@@ -44,13 +44,13 @@ $sql = "SELECT * FROM recipes WHERE del_rec = 0 ORDER BY category";}
 else if($sort==4){
 $sql = "SELECT * FROM recipes WHERE del_rec = 0 ORDER BY category DESC";}
 ?>
-<h3><center>Συνταγές</center></h3><br>
+<h3><center>Recipes</center></h3><br>
 <hr>
 <br>
 <?php
 //for database
 include 'dbcon.php';//connect to Db
-//εμφανιζει ολες τις εγγραφες
+//shows all rows
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
 ?>
 <div class=" cent linkStyle" style="margin-left: 75px;">
 <a href="result.php?id=<?php echo $id?>&img_id=<?php echo $img_id?>"><img src="uploads/<?php echo $img_id?>" alt="no image" style="margin:5px;width:180px;height:100px;vertical-align: middle;"><h3><?php echo $row["name"];?></h3></a> 
-<div style="display: inline; float: right;vertical-align: middle; text-align: left;"><br><br><h6>Εκτέλεση: <?php echo $row["ctime"];?> λεπτά </h6> <br> <h6>Κατηγορία: <?php echo $row["category"];?></h6></div>
+<div style="display: inline; float: right;vertical-align: middle; text-align: left;"><br><br><h6>Preparation: <?php echo $row["ctime"];?> minutes </h6> <br> <h6>Category: <?php echo $row["category"];?></h6></div>
 <br>
 <br>
 <hr>
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
 }//end if
 else {
 ?>
-<center>0 Συνταγές.</center>
+<center>0 Recipes.</center>
 <?php
 }
 $conn->close();

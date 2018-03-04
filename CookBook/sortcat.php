@@ -15,7 +15,7 @@
 		}//end if
 		else {
 		?>
-		<center>0 Συνταγές.</center>
+		<center>0 Recipes.</center>
 		<?php
 		}
 		$conn->close();

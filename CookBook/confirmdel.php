@@ -17,9 +17,9 @@ if ($_SESSION['login']!="TRUE"){
 	<?php include 'menu.php';?>
 	
 	<form action="recipedel.php" method="post">
-		<center>Ειστε σιγουρος για την διαγραφη;</center>
+		<center>Are you sure?</center>
 		 
-		<input type="hidden" name="id" value="<?php echo $_POST['idconfirm']//Στελνω το ID για delete ?>">
+		<input type="hidden" name="id" value="<?php echo $_POST['idconfirm']//Sending ID for deletion ?>">
     	<input type="submit" value="Nαι">
 	</form>
 	<form action="index.php">

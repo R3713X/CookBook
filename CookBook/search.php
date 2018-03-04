@@ -7,7 +7,7 @@ if ($_SESSION['login']!="TRUE"){
 ?>
 <html>
 <head>
-<title>Αποτελέσματα Αναζήτησης</title>
+<title>Search results</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/tabicon.ico">
 <meta  http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,7 +16,7 @@ if ($_SESSION['login']!="TRUE"){
 <div class="clearfix main">
 	<?php include 'menu.php';?>
 	<div class="content ">
-		<br><h3><center>Αποτελέσματα αναζήτησης</center></h3><br><hr>
+		<br><h3><center>Search results</center></h3><br><hr>
 		<?php
 		$search_ing1 = $_POST['s_ing1'];
 		//connect to Db
@@ -38,7 +38,7 @@ if ($_SESSION['login']!="TRUE"){
     		}//end while  
 		}else {
 		?>
-		<center>Δεν βρέθηκαν συνταγές.</center>
+		<center>No recipes.</center>
 		<?php   
 		}
 		$conn->close();

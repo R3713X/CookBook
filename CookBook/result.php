@@ -33,14 +33,14 @@ if ($_SESSION['login']!="TRUE"){
 			<img src="uploads/<?php echo $img_id?>" alt="no image" style="margin-top:42px;margin-left:12px; width:320px;height:200px;vertical-align: middle;">
 		</div>
 		<div class="con2" >
-			<h5>Υλικά:
+			<h5>Ingredients:
 			<hr>
 			<?php echo $row["ingr1"]; ?></h5>
-			<br><h6>Χρόνος εκτέλεσης:
-			<?php echo $row["ctime"]; ?> λεπτά</h6>
+			<br><h6>Preparation time:
+			<?php echo $row["ctime"]; ?> minutes</h6>
 		</div>
 		<div class="cent" style="margin-left: 50px;">
-			<br><h5>Οδηγίες:<hr>
+			<br><h5>Instructions:<hr>
 			<?php echo $row["instructions"]; ?></h5>
 		</div>
 		<br>
@@ -50,7 +50,7 @@ if ($_SESSION['login']!="TRUE"){
 				?>
 			<form action="confirmdel.php" method="POST">
 				<input type="hidden" name="idconfirm" value="<?php echo $id ?>">
-				<input type="submit" name="delete_rec" value="Διαγραφή">
+				<input type="submit" name="delete_rec" value="Delete">
 			</form>
 		<?php
 			}
